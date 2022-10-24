@@ -1,0 +1,13 @@
+<div>
+    <img [src]="photo" [alt]="name">
+    <h3>Nom: {{name}}</h3>
+    <h3>Prénon: {{firstName}}</h3>
+    <input type="text" (keydown)="onKeyDownEvent($event)" >
+    <p>{{quote}}</p>
+
+    <button (click)=toggleDisplay()>Afficher/Masquer mon âge</button>
+    <div *ngIf="isDisplay">
+        <h3>Age: {{age}}</h3>
+        </div>
+    
+</div>
