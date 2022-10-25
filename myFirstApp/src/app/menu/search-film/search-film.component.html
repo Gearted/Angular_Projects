@@ -1,0 +1,27 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label for="id">Id: </label>
+    <input id="id" type="text" formControlName="id">
+
+    <label for="titre">Titre: </label>
+    <input id="titre" type="text" formControlName="titre">
+    <label for="type">Type: </label>
+    <select formControlName="type" name="type" id="">
+        <option value="film">film</option>
+        <option value="serie">serie</option>
+        <option value="episode">episode</option>
+    </select>
+
+    <label for="annee">Année de sortie: </label>
+    <input id="annee" type="text" formControlName="annee">
+
+    <label for="complete">complete: </label>
+    <input id="complete" type="checkbox" formControlName="complete">
+
+    <label for="courte">courte: </label>
+    <input id="courte" type="checkbox" formControlName="courte">
+    
+
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
+</form>
