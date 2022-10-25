@@ -1,1 +1,44 @@
-<p>sign-up works!</p>
+<form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+   
+    <fieldset>
+        <label for="email">Email: </label>
+        <input type="email" name="email" [(ngModel)]="model.email" #email="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"  required email>
+        <div *ngIf="f.submitted && email.errors">
+            <div *ngIf="email.errors">Email is required</div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <label for="firstName">FirstName</label>
+        <input type="text" name="firstname" [(ngModel)]="model.firstname" #firstname="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }" required minlength="3" maxlength="15" />
+        <div *ngIf="f.submitted && firstname.errors">
+            <div *ngIf="firstname.errors">FirstName is required</div>
+            <div *ngIf="firstname.errors">FirstName must be at least 3 characters</div>
+            <div *ngIf="firstname.errors">FirstName must be no more than 15 characters</div>
+        </div>
+
+    </fieldset>
+    
+    
+    <fieldset>
+        <label for="lastname">Lastname: </label>
+        <input type="text" name="lastname" [(ngModel)]="model.lastname" #lastname="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && lastname.invalid }" required minlength="3" maxlength="15" />
+        <div *ngIf="f.submitted && lastname.errors">
+            <div *ngIf="lastname.errors">lastname is required</div>
+            <div *ngIf="lastname.errors">lastname must be at least 3 characters</div>
+            <div *ngIf="lastname.errors">lastname must be no more than 15 characters</div>
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <label for="password">Password: </label>
+        <input type="password" name="password" [(ngModel)]="model.password" #password="ngModel"
+            [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required password>
+        <div *ngIf="f.submitted && password.errors">
+            <div *ngIf="password.errors">password is required</div>
+        </div>
+    </fieldset>
+    <button type="submit">Sauvegarder</button>
+  </form>
