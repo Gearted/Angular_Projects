@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-film',
@@ -8,13 +9,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class SearchFilmComponent implements OnInit {
 
-  profileForm = new FormGroup({
-    id: new FormControl(''),
-    titre: new FormControl(''),
-    type: new FormControl(''),
-    annee: new FormControl(''),
-    complete: new FormControl(''),
-    courte: new FormControl(''),
+  profileForm = this.fb.group({
+    id: ['', Validators.required],
+    titre: [''],
+    type: [''],
+    annee: [''],
+    complete: [''],
+    courte: [''],
   });
 
   onSubmit() {
@@ -22,7 +23,7 @@ export class SearchFilmComponent implements OnInit {
   }
 
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
