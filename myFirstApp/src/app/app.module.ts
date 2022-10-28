@@ -12,6 +12,8 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { SearchFilmComponent } from './component/search-film/search-film.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HighlightDirective } from './component/highlight.directive';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignUpComponent,
     UserProfileComponent,
     SearchFilmComponent,
+    HighlightDirective,
+   
     
   ],
   imports: [
