@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { SearchFilmComponent } from './component/search-film/search-film.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HighlightDirective } from './component/highlight.directive';
+import { CreateOnamatopiaComponentComponent } from './component/create-onamatopia-component/create-onamatopia-component.component';
+import { OnomatopeiaComponent } from './component/onomatopeia/onomatopeia.component';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { HighlightDirective } from './component/highlight.directive';
     UserProfileComponent,
     SearchFilmComponent,
     HighlightDirective,
+    CreateOnamatopiaComponentComponent,
+    OnomatopeiaComponent,
    
     
   ],
